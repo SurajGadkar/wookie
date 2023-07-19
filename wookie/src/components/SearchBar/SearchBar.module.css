@@ -1,3 +1,11 @@
 .input {
   width: 300px;
+  background-color: var(--color-background);
+  color: var(--color-seconday);
+  border: 1px solid var(--color--seconday);
+}
+
+.btn {
+  background-color: var(--color-background);
+  color: var(--seconday);
 }

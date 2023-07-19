@@ -3,9 +3,9 @@
   /* */
   --color-white: #ffffff;
   --color-black: #000;
-  --color-primary: ;
-  --color-seconday: ;
-  --color-background: #090;
+  --color-primary: #1d3557;
+  --color-seconday: #4cc9f0;
+  --color-background: #14213d;
 }
 
 *,
@@ -20,6 +20,7 @@ html,
 body {
   height: 100%;
   overflow-x: hidden;
+  background-color: var(--color-primary);
 }
 body {
   line-height: 1.5;

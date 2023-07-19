@@ -1,13 +1,16 @@
-.li {
-  list-style: none;
-}
-
 .link_container {
   width: 400px;
   display: flex;
   justify-content: space-around;
+  list-style: none;
+}
+.link_hover > li:hover {
+  font-size: 15px;
+  color: var(--color-white);
 }
 
 .light_font {
+  color: var(--color-seconday);
   font-weight: 300;
+  list-style: none;
 }

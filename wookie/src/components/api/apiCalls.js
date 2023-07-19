@@ -4,12 +4,11 @@ const BACKEND_URL = "https://wookie.codesubmit.io";
 export const getMovieDetailsById = async (movieId, token) => {
   try {
     // Get a list of all movies
-    const response = await getMovieList(token);
+    let response = await getMovieList(token);
+    response = response.movies;
 
-    response.then((data) => {
-      const movie = data.movies.filter((m) => m.id === movieId);
-      return movie;
-    });
+    const movie = response.filter((m) => m.id === movieId);
+    return movie;
 
     // Filter movies by passing movieId
   } catch (err) {
@@ -31,19 +30,38 @@ export const getMovieList = async (token) => {
   }
 };
 
-export const getMovieByGenre = async (genre, token) => {
+export const getMovieByGenre = async (genre) => {
   try {
-    const response = await getMovieList(token);
+    let response = await getMovieList("Wookie2019");
+    response = response.movies;
 
-    response.then((data) => {
-      // Filter movieslist by genre
-      const moviesByGenre = data.movies.filter((movie) => {
-        return movie.genre.filter((g) => genre.includes(g));
-      });
-      return moviesByGenre;
+    const moviesByGenre = response.filter((movie) => {
+      return movie.genres.includes(genre);
     });
-    
+    return moviesByGenre;
   } catch (err) {
     console.log(err);
   }
+};
+
+
+export const getAllGenres = (movieList) => {
+  let uniqueGenre = new Set();
+  movieList.forEach((movie) => {
+    movie.genres.forEach((genre) => {
+      uniqueGenre.add(genre);
+    });
+  });
+  const result = Array.from(uniqueGenre);
+  return result;
+};
+
+/* Search function */
+
+export const search = (movieList, str) => {
+  const result = movieList.filter((movie) =>
+    movie.title.toLowerCase().includes(str.toLowerCase())
+  );
+
+  return result;
 };
