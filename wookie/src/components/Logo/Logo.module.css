@@ -1,0 +1,14 @@
+.img_container {
+  height: 100px;
+  max-width: 100%;
+  object-fit: contain;
+  border: 1px solid black;
+  flex: start;
+  
+}
+
+.img {
+  height: 100px;
+  max-width: 100%;
+  object-fit: contain;
+}

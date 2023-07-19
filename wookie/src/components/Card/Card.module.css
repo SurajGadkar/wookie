@@ -1,0 +1,30 @@
+.card_container {
+  height: 300px;
+  width: 180px;
+  border: 0.1px solid white;
+  border-radius: 10px;
+  margin: 8px 4px;
+}
+
+.img {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.card_title {
+  color: var(--color-white);
+  z-index: 1;
+  position: relative;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card_container:hover {
+  cursor: pointer;
+}
